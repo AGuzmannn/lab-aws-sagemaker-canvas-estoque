@@ -18,41 +18,17 @@ Com essa poderosa ferramenta de ML Low Code pode-se:
 
 . Extrair informações de documentos
 
+# Descrição
 
+Criou-se uma conta na AWS, após criou-se um domínio/ usuário no SageMaker Canvas.
+Criou-se um modelo de anlálise preditiva de dados, através do dataset "canvas-sample-retail-eletronics-forecasting.csv", para prever a demanda de produtos. Através da target column DEMAND e no Configure model, em Times series configuration, escolheu-se item_id. Clicou-se em Quick build, utilizando 20.000 registros recomendados pelo SageMaker Canvas dos 45.000 registros do dataset, para o treinamento da máquina.
 
-# Passo a passo
+Gerou-se métricas Avg .wQL (Média da Perda Quantil Ponderada), MAPE (Erro percentual absoluto médio), WAPE (Erro Percentual Médio Ponderado), RMSE (Erro Quadrático Médio Raiz), MASE (Erro Médio Escalado Absoluto), os índices devem estar mais próximos de zero para melhor precisão da análise preditiva.
 
-- Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para uma "Previsão de Estoque Inteligente".
-- Para isso, siga o [passo a passo] descrito a seguir e evolua as suas habilidades em ML no-code com o Amazon SageMaker Canvas.
-- Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
+Feita a seleção do dataset (select), construção do modelo (build), gerou a análise de dados (analyze), podendo ser feita a predição de demanda de cada produto do dataset escolhido. 
 
+Para refinar a contrução do modelo, foi criado um arquivo CSV ('sales_data.csv')através de AI, Gemini da Google, com o seguinte prompt: "Atue como um cientista de dados e crie um dataset em formato CSV com no mínimo 500 registros. Gostaria que esse arquivo refletisse o histórico de vendas de produtos com as seguintes colunas: ID_PRODUTO (numerico incremental), DIA (iniciando em 31/12/2023), FLAG_PROMOCAO, QUANTIDADE_ESTOQUE. Nesse sentido, garanta que haja uma diversidade interessante de produtos (pelo menos 25 IDs diferentes por dia) para um sistema de gerenciamento inteligente de estoque. Além disso, garanta que cada produto tenha uma quantidade inicial em estoque que vá decrescendo de maneira variável dia a dia (se tudo for vendido manter o estoque zerado). Na prática, usarei este dataset para treinar um modelo de machine learning", que foi usada para treinar e refinar o modelo. 
 
-## 🚀 Passo a Passo
+# Conclusão
 
-### 1. Selecionar Dataset
-
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
-
-### 2. Construir/Treinar
-
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
-
-### 3. Analisar
-
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
-
-### 4. Prever
-
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
-
-## 🤔 Dúvidas?
-
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
+O Amazon SageMaker Canvas é uma ferramenta poderosa que simplifica o processo de criação e implantação de modelos preditivos, especialmente para analistas de negócios e profissionais que desejam aproveitar o machine learning sem a necessidade de conhecimento técnico profundo, ele democratiza o machine learning, permitindo a tomada de decisões informadas com base em análises preditivas. 
